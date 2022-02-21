@@ -21,6 +21,9 @@ def thesaurus_adv(*args):
         if last_name[0] in wordbook_full:
             if first_name[0] in wordbook_full[last_name[0]]:
                 wordbook_full[last_name[0]][first_name[0]].append(word)
+            else:
+                wordbook_name[first_name[0]] = [word]
+                wordbook_full[last_name[0]].update(wordbook_name)
         else:
             wordbook_name[first_name[0]] = [word]
             wordbook_full.setdefault(last_name[0], wordbook_name)
